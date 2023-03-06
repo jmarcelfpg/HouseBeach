@@ -1,4 +1,5 @@
 import Container from '@mui/material/Container';
+import { useTheme } from '@mui/material/styles';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListSubheader from '@mui/material/ListSubheader';
@@ -59,21 +60,22 @@ const amenities = [
 ]
 
 const AmenitiesContainer = () => {
-    const isSm = useMediaQuery("sm")
+    const theme = useTheme()
+    const isSm = useMediaQuery(theme.breakpoints.down("md"))
 
 
     return (
         <Container
             sx={{
                 display: "flex",
-                flexDirection: isSm ? "row" : "column",
+                flexDirection: isSm ? "column" : "row",
                 justifyContent: "space-around",
                 alignItems: "center",
                 minHeight: "100vh",
                 pt: 8,
                 pb: 8,
             }}
-            maxWidth="md"
+            maxWidth="xl"
             component="main"
         >
             {amenities.map(({ subheader, items }, indexList) => (
@@ -84,7 +86,7 @@ const AmenitiesContainer = () => {
                         width: '100%',
                         minHeight: "500px",
                         bgcolor: 'background.paper',
-                        [theme.breakpoints.down("sm")]: {
+                        [theme.breakpoints.down("md")]: {
                             minHeight: "100px",
                             mb: "15px",
                         }
