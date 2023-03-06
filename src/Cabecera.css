@@ -1,0 +1,18 @@
+.logo-Cabecera {
+  border-radius: 60px;
+  transform: translateY(12px);
+}
+
+.toolbar-Cabecera {
+  height: 64px;
+}
+
+.toolbar-Cabecera > * {
+  margin-left: 10px;
+}
+
+@media (max-width: 600px) {
+  .toolbar-Cabecera {
+    height: 64px;
+  }
+}
