@@ -23,7 +23,7 @@ const CarrouselImages: FC<CarrouselImagesProps> = (props) => {
             propOnSelectImage(event, value)
         }
         setValue(value)
-    }, [propOnSelectImage, propValue])
+    }, [propOnSelectImage])
     return (
         <Tabs
             value={value}
