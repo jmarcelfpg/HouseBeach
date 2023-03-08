@@ -5,6 +5,9 @@ import Typography from '@mui/material/Typography';
 import Tooltip from '@mui/material/Tooltip';
 import Fab from '@mui/material/Fab';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import { Link } from '@mui/material';
+import { darken } from '@mui/material/styles'
+import Paper from '@mui/material/Paper'
 
 
 const CallContainer = () => {
@@ -30,7 +33,13 @@ const CallContainer = () => {
             }
         })}>
             <Typography fontWeight={700} mr={2} variant="h3" component="div">Reserva al</Typography>
-            <Typography fontWeight={700} mr={2} variant="h3" component="div">+52 33 3588 5280</Typography>
+            <Link sx={(theme) => ({
+                color: theme.palette.getContrastText("#008b8b"),
+                textDecorationColor: theme.palette.getContrastText("#008b8b")
+            })}
+                href="https://wa.me/+523335885280">
+                <Typography fontWeight={700} mr={2} variant="h3" component="div">+52 33 3588 5280</Typography>
+            </Link>
         </Box>
         <Box sx={(theme) => ({
             [theme.breakpoints.down("sm")]: {
@@ -39,23 +48,27 @@ const CallContainer = () => {
         })}
         >
             <Tooltip title="Llamanos, mensajes o whatsapp">
-                <Fab
-                    size="large"
-                    aria-label="call number"
-                    aria-haspopup="true"
-                    href="https://wa.me/+523335885280"
-                    color="info"
-                    target="_blank"
+                <Paper elevation={5} sx={{ borderRadius: "100%" }}>
+                    <Fab
+                        size="large"
+                        aria-label="call number"
+                        aria-haspopup="true"
+                        href="https://wa.me/+523335885280"
+                        color="info"
+                        target="_blank"
 
-                    sx={({
-                        backgroundColor: "green",
-                        height: "120px",
-                        width: "120px",
-
-                    })}
-                >
-                    <WhatsAppIcon sx={{ fontSize: 80 }} />
-                </Fab>
+                        sx={({
+                            backgroundColor: "#008000",
+                            height: "120px",
+                            width: "120px",
+                            "&:hover": {
+                                backgroundColor: darken("#008000", 0.2)
+                            }
+                        })}
+                    >
+                        <WhatsAppIcon sx={{ fontSize: 80 }} />
+                    </Fab>
+                </Paper>
             </Tooltip>
         </Box>
     </Container >

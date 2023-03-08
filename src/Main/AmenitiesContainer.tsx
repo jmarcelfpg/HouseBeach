@@ -27,34 +27,34 @@ const amenities = [
     {
         subheader: "Espacios",
         items: [
-            { text: "Recamara King Size", icon: <KingBedOutlinedIcon /> },
-            { text: "Recamara con Litera Matrimonial", icon: <KingBedOutlinedIcon /> },
+            { text: "Recamara King Size", icon: <KingBedOutlinedIcon fontSize="inherit" /> },
+            { text: "Recamara con Litera Matrimonial", icon: <KingBedOutlinedIcon fontSize="inherit" /> },
             { text: "Sofa Cama en sala", icon: <ChairOutlinedIcon /> },
-            { text: "Escritorio Home Office", icon: <TableRestaurantOutlinedIcon /> },
-            { text: "Baño completo (2)", icon: <BathtubOutlinedIcon /> },
-            { text: "Camastros", icon: <BeachAccessOutlinedIcon /> },
-            { text: "Alberca", icon: <PoolOutlinedIcon /> },
+            { text: "Escritorio Home Office", icon: <TableRestaurantOutlinedIcon fontSize="inherit" /> },
+            { text: "Baño completo (2)", icon: <BathtubOutlinedIcon fontSize="inherit" /> },
+            { text: "Camastros", icon: <BeachAccessOutlinedIcon fontSize="inherit" /> },
+            { text: "Alberca", icon: <PoolOutlinedIcon fontSize="inherit" /> },
         ]
     },
     {
         subheader: "Electrodomesticos",
         items: [
-            { text: "Aire Acondicionado Sala y Recamara", icon: <AcUnitOutlinedIcon /> },
-            { text: "TV 55\" TV 43\" TV 32\"", icon: <TvOutlinedIcon /> },
-            { text: "Wifi", icon: <WifiOutlinedIcon /> },
-            { text: "Cafetera", icon: <CoffeeMakerOutlinedIcon /> },
-            { text: "Refrigerador", icon: <KitchenOutlinedIcon /> },
-            { text: "Secador", icon: <DryOutlinedIcon /> },
+            { text: "Aire Acondicionado Sala y Recamara", icon: <AcUnitOutlinedIcon fontSize="inherit" /> },
+            { text: "TV 55\" TV 43\" TV 32\"", icon: <TvOutlinedIcon fontSize="inherit" /> },
+            { text: "Wifi", icon: <WifiOutlinedIcon fontSize="inherit" /> },
+            { text: "Cafetera", icon: <CoffeeMakerOutlinedIcon fontSize="inherit" /> },
+            { text: "Refrigerador", icon: <KitchenOutlinedIcon fontSize="inherit" /> },
+            { text: "Secador", icon: <DryOutlinedIcon fontSize="inherit" /> },
         ]
     },
     {
         subheader: "Articulos y Utensilios",
         items: [
-            { text: "Toallas para baño 6pz", icon: <DryCleaningOutlinedIcon /> },
-            { text: "Toallas para baño 4pz", icon: <DryCleaningOutlinedIcon /> },
-            { text: "Vajilla", icon: <CoffeeOutlinedIcon /> },
-            { text: "Utensilios de cocina", icon: <BlenderOutlinedIcon /> },
-            { text: "Cajones de estacionamiento (2)", icon: <LocalParkingOutlinedIcon /> },
+            { text: "Toallas para baño 6pz", icon: <DryCleaningOutlinedIcon fontSize="inherit" /> },
+            { text: "Toallas para baño 4pz", icon: <DryCleaningOutlinedIcon fontSize="inherit" /> },
+            { text: "Vajilla", icon: <CoffeeOutlinedIcon fontSize="inherit" /> },
+            { text: "Utensilios de cocina", icon: <BlenderOutlinedIcon fontSize="inherit" /> },
+            { text: "Cajones de estacionamiento (2)", icon: <LocalParkingOutlinedIcon fontSize="inherit" /> },
         ]
     },
 ]
@@ -91,16 +91,35 @@ const AmenitiesContainer = () => {
                             mb: "15px",
                         }
                     })}
-                    subheader={<ListSubheader>{subheader}</ListSubheader>}
+                    subheader={<ListSubheader sx={() => ({
+                        fontSize: "1.5rem",
+                        [theme.breakpoints.down("xl")]: {
+                            fontSize: "1rem",
+                        }
+                    })
+                    }>{subheader}</ListSubheader>}
                 >
                     {items.map(({ text, icon }: any, indexItem: any) => <ListItem key={indexItem} >
-                        <ListItemIcon>{icon}</ListItemIcon>
-                        <ListItemText >{text}</ListItemText>
+                        <ListItemIcon sx={(theme) => ({
+                            fontSize: "2rem",
+                            [theme.breakpoints.down("xl")]: {
+                                fontSize: "1.2rem",
+                            }
+                        })
+                        }>{icon}</ListItemIcon>
+                        <ListItemText primaryTypographyProps={{
+                            sx: () => ({
+                                fontSize: "2rem",
+                                [theme.breakpoints.down("xl")]: {
+                                    fontSize: "1.2rem",
+                                }
+                            })
+                        }} >{text}</ListItemText>
                     </ListItem>)}
                 </List>
             )
             )}
-        </Container>)
+        </Container >)
 }
 
 export default AmenitiesContainer
