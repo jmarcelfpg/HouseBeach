@@ -17,9 +17,9 @@ const InitialContainer = () => {
     }, [isSm])
     return <Container className="information-container" disableGutters component="main" maxWidth={false} sx={{
         display: "flex", alignItems: "flex-end", m: 0, pt: 8, pb: 0, backgroundImage: "url(/images/Piscina_2.jpeg)", minHeight: "100vh", backgroundRepeat: "no-repeat", backgroundSize: "cover", [theme.breakpoints.down("md")]: {
-            backgroundPositionX: -500
+            backgroundPositionX: "40%"
         }, [theme.breakpoints.down("sm")]: {
-            backgroundPositionX: -550
+            backgroundPositionX: "60%"
         }
     }}>
         <Box sx={{ display: "flex", flex: 1, backgroundColor: alpha("#000", 0.5), height: "20vh" }}>

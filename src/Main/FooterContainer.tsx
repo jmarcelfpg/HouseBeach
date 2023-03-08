@@ -95,12 +95,21 @@ const FooterContainer = () => {
             height: "100vh",
             borderTop: `1px solid ${theme.palette.divider}`,
             py: [10, 10],
-            [theme.breakpoints.down("xl")]: {
+            [theme.breakpoints.up("md")]: {
                 py: [10, 10],
+
             }
-        })}
+        })
+        }
     >
-        <Box sx={{ display: "flex", justifyContent: "space-around" }}>
+        <Box sx={(theme) => ({
+            display: "flex",
+            justifyContent: "space-around",
+            [theme.breakpoints.down("md")]: {
+                flex: 1,
+                flexDirection: "column"
+            }
+        })}>
             <Typography variant="h4" >
                 Ven a manzanillo
             </Typography>
@@ -108,7 +117,14 @@ const FooterContainer = () => {
                 Disfruta tu estadia en nuestro departamento
             </Typography>
         </Box>
-        <Box sx={{ display: "flex", justifyContent: "space-around" }}>
+        <Box sx={(theme) => ({
+            display: "flex",
+            justifyContent: "space-around",
+            [theme.breakpoints.down("md")]: {
+                flex: 1,
+                flexDirection: "column"
+            }
+        })}>
             <Typography variant="h4" >
                 Ambiente  y comodidad
             </Typography>
@@ -116,15 +132,22 @@ const FooterContainer = () => {
                 A tu servicio
             </Typography>
         </Box>
-        <Box sx={{ display: "flex", justifyContent: "space-around" }}>
+        <Box sx={(theme) => ({
+            display: "flex",
+            justifyContent: "space-around",
+            [theme.breakpoints.down("md")]: {
+                flex: 1,
+                flexDirection: "column"
+            }
+        })}>
             <Typography variant="h4" >
                 Relajate
             </Typography>
             <Typography variant="h4" >
                 Te mereces unas vacaciones
             </Typography>
-        </Box>
-    </Container>
+        </Box >
+    </Container >
 }
 
 
