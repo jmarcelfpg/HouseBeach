@@ -1,3 +1,4 @@
+import React, { FC } from 'react'
 import { AppBar, Link, Tooltip } from "@mui/material"
 import Toolbar from "@mui/material/Toolbar"
 import Typography from "@mui/material/Typography"
@@ -11,7 +12,6 @@ import Fab from "@mui/material/Fab";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp"
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 import Slide from '@mui/material/Slide';
-import { FC } from 'react'
 
 interface Props {
     /**
