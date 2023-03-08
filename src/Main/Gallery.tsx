@@ -16,13 +16,14 @@ interface CarrouselImagesProps {
 }
 
 const CarrouselImages: FC<CarrouselImagesProps> = (props) => {
-    const [value, setValue] = useState(props.value)
+    const { onSelectImage: propOnSelectImage, value: propValue } = props
+    const [value, setValue] = useState(propValue)
     const onSelectImage = useCallback<ChangeFn>((event, value) => {
-        if (props.onSelectImage) {
-            props.onSelectImage(event, value)
+        if (propOnSelectImage) {
+            propOnSelectImage(event, value)
         }
         setValue(value)
-    }, [props.value])
+    }, [propOnSelectImage, propValue])
     return (
         <Tabs
             value={value}
